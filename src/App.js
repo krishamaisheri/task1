@@ -1,24 +1,20 @@
 import './App.css';
 import React, { useState } from "react";
-import UserTable from "./UserTable";  // Import the table component
+import UserTable from "./UserTable";  
 
 function App() {
-  // State variables for form inputs
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [email, setEmail] = useState('');
-  const [users, setUsers] = useState([]); // Array to store multiple user data
+  const [users, setUsers] = useState([]);
 
-  // Handle form submission
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent page reload
+    e.preventDefault();
 
-    // Only add user if all fields are filled
     if (name && age && email) {
       const newUser = { name, age, email };
-      setUsers([...users, newUser]); // Add new user to the existing list
+      setUsers([...users, newUser]); 
 
-      // Clear input fields after submitting
       setName('');
       setAge('');
       setEmail('');
@@ -27,7 +23,7 @@ function App() {
 
   return (
     <div className="app-container">
-      {/* Form on the left side */}
+      {}
       <div className="form-container">
         <h2>Enter User Details</h2>
         <form onSubmit={handleSubmit}>
@@ -62,7 +58,7 @@ function App() {
         </form>
       </div>
 
-      {/* Table to display all user data on the right side */}
+      {}
       <div className="user-table-container">
         {users.length > 0 ? (
           <UserTable users={users} />
